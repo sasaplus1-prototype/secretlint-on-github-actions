@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: echo 'http://user:pass@localhost:8080' > test.txt
+      - run: echo 'http://user:pass@example.com:8080' > test.txt
       - uses: docker://secretlint/secretlint:latest
         with:
           args: secretlint "**/*"
