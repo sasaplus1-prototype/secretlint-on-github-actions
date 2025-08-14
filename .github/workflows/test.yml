@@ -1,0 +1,13 @@
+name: lint
+
+on:
+  - push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@4
+      - uses: docker://secretlint/secretlint:latest
+        with:
+          args: secretlint "**/*"
